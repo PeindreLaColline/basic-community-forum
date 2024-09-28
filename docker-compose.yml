@@ -2,6 +2,7 @@ version: '3.8'
 services:
   web:
     build: .gradle
+    container_name: basic-community-forum-web-1
     image: basic-forum
   mysql:
     image: mysql:8.0
