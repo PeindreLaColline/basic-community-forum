@@ -34,5 +34,6 @@ public class ViewSyncServiceImpl implements ViewSyncService {
         Post post = postRepository.findById(postId)
                 .orElseThrow(() -> new RuntimeException("Post not found")); // 예외 처리
         post.increasePostView(hitCount);
+        postRepository.save(post);
     }
 }
