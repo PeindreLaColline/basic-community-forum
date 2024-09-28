@@ -1,9 +1,13 @@
 version: '3.8'
 services:
   web:
-    build: .
     container_name: basic-community-forum-web-1
     image: basic-forum
+    depends_on:
+      - mysql
+      - redis
+    ports:
+      - 8080:8080
 
   mysql:
     image: mysql:8.0
@@ -16,6 +20,8 @@ services:
       MYSQL_USER: mini4
       MYSQL_PASSWORD: 1234
       MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql_data:/var/lib/mysql
 
   redis:
     image: redis
@@ -24,4 +30,9 @@ services:
       - "6379:6379"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    volumes:
+      - redis_data:/data
 
+volumes:
+  mysql_data:  # MySQL 데이터 저장을 위한 볼륨
+  redis_data:  # Redis 데이터 저장을 위한 볼륨
