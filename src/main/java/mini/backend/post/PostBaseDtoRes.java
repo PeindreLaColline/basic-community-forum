@@ -2,7 +2,7 @@ package mini.backend.post;
 import lombok.*;
 import mini.backend.user.UserDtoRes;
 
-@Data
+@Getter
 @AllArgsConstructor
 public class PostBaseDtoRes {
     private final Long postId;

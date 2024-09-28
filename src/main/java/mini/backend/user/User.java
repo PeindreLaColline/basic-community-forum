@@ -33,8 +33,8 @@ public class User extends BaseTimeEntity {
     private UserRole role; //[ADMIN, USER]
 
     @OneToMany(mappedBy = "user", fetch=FetchType.LAZY)
-    private List<Post> posts = new ArrayList<>();
+    private final List<Post> posts = new ArrayList<>();
 
     @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
-    private List<Comment> comments = new ArrayList<>();
+    private final List<Comment> comments = new ArrayList<>();
 }

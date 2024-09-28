@@ -2,10 +2,11 @@ package mini.backend.post;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 
 import java.sql.Timestamp;
 
-@Data
+@Getter
 @AllArgsConstructor
 public class PostDtoReq {
     private final String title;

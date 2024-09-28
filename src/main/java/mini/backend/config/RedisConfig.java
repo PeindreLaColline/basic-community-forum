@@ -15,7 +15,7 @@ public class RedisConfig {
 
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
-        return new LettuceConnectionFactory("localhost", 6379); // Redis 서버의 주소와 포트를 설정
+        return new LettuceConnectionFactory("host.docker.internal", 6379); // Redis 서버의 주소와 포트를 설정
     }
 
     @Bean

@@ -6,7 +6,7 @@ import mini.backend.user.UserDtoRes;
 
 import java.util.List;
 
-@Data
+@Getter
 public class PostDetailDtoRes extends PostBaseDtoRes{
     private final String content;
     private final List<CommentDtoRes> commentList;

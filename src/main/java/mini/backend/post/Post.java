@@ -10,7 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -30,8 +31,9 @@ public class Post extends BaseTimeEntity {
     private boolean isAnnounce;
 
     @OneToMany(mappedBy = "post", fetch=FetchType.LAZY, cascade = CascadeType.REMOVE)
-    private List<Comment> comments = new ArrayList<>();
+    private final List<Comment> comments = new ArrayList<>();
 
+    @Builder.Default
     private Long postView = 0L;
 
     public void increasePostView(Long postView) {
