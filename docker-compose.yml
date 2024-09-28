@@ -1,5 +1,8 @@
 version: '3.8'
 services:
+  web:
+    build: .gradle
+    image: basic-forum
   mysql:
     image: mysql:8.0
     container_name: mysql2
@@ -19,3 +22,4 @@ services:
       - "6379:6379"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+
