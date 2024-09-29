@@ -4,7 +4,7 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://43.203.200.236:3306/mini4
+    url: jdbc:mysql://3.39.0.113:3306/mini4
     username: mini4
     password: 1234
 
@@ -19,7 +19,7 @@ spring:
 
   data:
     redis:
-      host: 43.203.200.236
+      host: 3.39.0.113
       port: 6379
 
 springdoc:
