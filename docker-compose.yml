@@ -8,6 +8,8 @@ services:
       - redis
     ports:
       - 8080:8080
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   mysql:
     image: mysql:8.0
@@ -22,16 +24,18 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - mysql_data:/var/lib/mysql
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   redis:
     image: redis
     container_name: redis2
     ports:
       - "6379:6379"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
     volumes:
       - redis_data:/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 volumes:
   mysql_data:  # MySQL 데이터 저장을 위한 볼륨
