@@ -4,7 +4,7 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://host.docker.internal:3306/mini4
+    url: jdbc:mysql://172.31.11.196l:3306/mini4
     username: mini4
     password: 1234
 
@@ -19,7 +19,7 @@ spring:
 
   data:
     redis:
-      host: host.docker.internal
+      host: 172.31.11.196
       port: 6379
 
 springdoc:
